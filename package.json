@@ -7,9 +7,10 @@
   "type": "module",
   "main": "backend/index.js",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
-    "start": "node backend/index.js",
-    "dev": "nodemon backend/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node backend/index.js",
+    "dev": "NODE_ENV=development nodemon backend/index.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "dependencies": {

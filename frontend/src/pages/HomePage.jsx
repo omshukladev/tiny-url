@@ -14,7 +14,7 @@ const HomePage = () => {
       return toast.error("Please enter a URL"); // if the url is not send by client error message from toast
     }
     try {
-      const res = await axiosInstance.post("/short", { originalUrl }); //end request to post with req.body
+      const res = await axiosInstance.post("/api/short", { originalUrl }); //end request to post with req.body
       const data = unwrapResponse(res);
       setShortUrl(data.shortUrl); //saves the result -->https://render.com/abc123 its takes from backend
       toast.success("URL shortened!");

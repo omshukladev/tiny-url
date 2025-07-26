@@ -11,7 +11,9 @@ const shortenUrl = asyncHandler(async (req, res) => {
   }
   const shortUrl = nanoid(8); // e.g., "A3bX9zLp"
 
-  const fullShortUrl = `${req.protocol}://${req.get("host")}/${shortUrl}`;
+  // const fullShortUrl = `${req.protocol}://${req.get("host")}/${shortUrl}`;
+  const fullShortUrl = `${process.env.BASE_URL || "http://localhost:4000"}/${shortUrl}`;
+
   //  generate full short URL
 
   const url = await Url.create({
@@ -22,13 +24,11 @@ const shortenUrl = asyncHandler(async (req, res) => {
   // making response data custom
   const responseData = {
     ...url.toObject(),
-    shortUrl: fullShortUrl, // override with full short URL for frontend. 
+    shortUrl: fullShortUrl, // override with full short URL for frontend.
     // replaces `shortUrl` with full link
   };
 
-  return res
-    .status(201)
-    .json(new apiResponse(201, responseData, "Short URL created successfully"));
+  return res.status(201).json(new apiResponse(201, responseData, "Short URL created successfully"));
 });
 
 const redirectUrl = asyncHandler(async (req, res) => {
@@ -44,8 +44,7 @@ const redirectUrl = asyncHandler(async (req, res) => {
   return res.redirect(url.originalUrl);
 });
 
-
-export { shortenUrl,redirectUrl };
+export { shortenUrl, redirectUrl };
 
 // User clicks → https://yourdomain.com/s5kWv4P0
 //                   ↓
@@ -62,4 +61,3 @@ export { shortenUrl,redirectUrl };
 // Using .toObject() removes all the extra Mongoose stuff and gives you just a plain JavaScript object with the data.
 // ...url.toObject()
 // This is using the spread operator (...) in JavaScript to convert a Mongoose document (url) into a plain JavaScript object, and then copy all its properties into a new object.
-

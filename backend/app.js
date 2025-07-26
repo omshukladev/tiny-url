@@ -32,7 +32,7 @@ import urlRoutes from "./routes/url.route.js";
 
 //routes
 app.use("/api", healthcheck);
-app.use("/api", urlRoutes);
+app.use("/", urlRoutes);
 
 //  Static frontend serving after API routes
 if (process.env.NODE_ENV === "production") {

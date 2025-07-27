@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
 dotenv.config({
-  path: "./.env" //it is a secrect
+  path: ".env" //it is a secrect
 })
 const __dirname = path.resolve();
 

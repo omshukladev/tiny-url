@@ -11,9 +11,9 @@ const shortenUrl = asyncHandler(async (req, res) => {
   }
   const shortUrl = nanoid(8); // e.g., "A3bX9zLp"
 
-  // const fullShortUrl = `${req.protocol}://${req.get("host")}/${shortUrl}`;
+  const fullShortUrl = `${req.protocol}://${req.get("host")}/${shortUrl}`;
   // const fullShortUrl = `${req.protocol}://${req.get("host")}/api/${shortUrl}`;
-  const fullShortUrl = `${process.env.BASE_URL}/${shortUrl}`; 
+  // const fullShortUrl = `${process.env.BASE_URL}/${shortUrl}`; 
 
 
   //  generate full short URL

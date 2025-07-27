@@ -5,8 +5,8 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
 dotenv.config({
-  path: ".env" //it is a secrect
-})
+  path: ".env", //it is a secrect
+});
 const __dirname = path.resolve();
 
 const app = express();
@@ -41,10 +41,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
   //  Keep this LAST so it doesn’t override `/api/...`
-  app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
-});
-
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
+  });
 }
 
 export default app;

@@ -2,8 +2,8 @@ import axios from "axios";
 
 const baseURL =
   import.meta.env.PROD
-    ? "/" // In production, frontend and backend are same domain
-    : "http://localhost:4000/"; // In dev mode, talk to local backend
+    ? import.meta.env.VITE_BACKEND_URL
+    : "http://localhost:4000/";
 
 export const axiosInstance = axios.create({
   baseURL,

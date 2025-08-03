@@ -1,6 +1,3 @@
-Here is a **professional, GitHub-formatted `README.md`** for your **URL Shortener** project — based on your stack, features, deployment link, and best practices:
-
----
 
 ```md
 # 🔗 URL Shortener

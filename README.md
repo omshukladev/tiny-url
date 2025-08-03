@@ -116,7 +116,6 @@ Deployed fullstack on **Render** using:
 ## 🤝 Author
 
 * **Om Shukla**
-* Twitter, GitHub, or LinkedIn links (optional)
 
 ---
 
@@ -128,18 +127,4 @@ This project is licensed under the **ISC License** — feel free to use and modi
 
 ---
 
-### ✅ What You Should Do Next:
-
-1. Create a file in your root: `README.md`
-2. Paste the above content.
-3. Replace `your_mongo_db_connection_string` with your actual env var name.
-4. (Optional) Add real screenshots or author links if you want.
-
-Let me know if you'd like:
-- GitHub repo description + tags
-- `.env.example` file
-- Deploy button (`Deploy to Render`)
-- API Documentation (Postman-style section)
-
-All can be added to `README.md`.
 ```
